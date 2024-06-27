@@ -48,7 +48,7 @@ body {
 .page-content {
   width: 100%;
   margin: 0 auto;
-  background: #e975c4;
+  background: #f2f0f7;
   display: flex;
   display: -webkit-flex;
   justify-content: center;
@@ -68,7 +68,7 @@ body {
   );
   background-image: -webkit-linear-gradient(
     136deg,
-    #851cae 0%,
+    #3e1cae 0%,
     rgb(248, 248, 248) 100%
   );
   background-image: -ms-linear-gradient(
@@ -112,11 +112,11 @@ body {
   width: 100%;
 }
 .form-v10-content .form-detail .form-left h2 {
-  color: #851cae;
+  color: #3e1cae;
 }
 .form-v10-content .form-detail .form-right {
   width: 100%;
-  background: #851cae;
+  background: #3e1cae;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }

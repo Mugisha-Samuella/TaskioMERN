@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import {addData} from '../redux/userSlice.js'
 
 export default function ContactDetails() {
+  const formData = useSelector(state=>state)
+  const [userData, setUserData] = useState({
+    street: "",
+    additional: "",
+    zip: "",
+    place: "",
+    country: "",
+    code: "",
+    phone: "",
+    email: "",
+  });
+  const dispatch = useDispatch();
 
+  const handleChange = (e) => {
+    setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  useEffect(() => {
+    dispatch(addData(userData));
+    
+  }, [userData]);
+
+  const handleSubmit = () => {
+    // e.preventDefault()
+    console.log(formData)
+  }
   return (
     <div>
        <div class="form-right">
@@ -10,6 +38,7 @@ export default function ContactDetails() {
               <input
                 type="text"
                 name="street"
+                onChange={handleChange}
                 class="street"
                 id="street"
                 placeholder="Street + Nr"
@@ -20,6 +49,7 @@ export default function ContactDetails() {
               <input
                 type="text"
                 name="additional"
+                onChange={handleChange}
                 class="additional"
                 id="additional"
                 placeholder="Additional Information"
@@ -32,13 +62,14 @@ export default function ContactDetails() {
                   type="text"
                   name="zip"
                   class="zip"
+                  onChange={handleChange}
                   id="zip"
                   placeholder="Zip Code"
                   required
                 />
               </div>
               <div class="form-row form-row-2">
-                <select name="place">
+                <select name="place" onChange={handleChange}>
                   <option value="place">Place</option>
                   <option value="Street">Street</option>
                   <option value="District">District</option>
@@ -50,7 +81,7 @@ export default function ContactDetails() {
               </div>
             </div>
             <div class="form-row">
-              <select name="country">
+              <select name="country" onChange={handleChange}>
                 <option value="country">Country</option>
                 <option value="Vietnam">Vietnam</option>
                 <option value="Malaysia">Malaysia</option>
@@ -65,6 +96,7 @@ export default function ContactDetails() {
                 <input
                   type="text"
                   name="code"
+                  onChange={handleChange}
                   class="code"
                   id="code"
                   placeholder="Code +"
@@ -74,6 +106,7 @@ export default function ContactDetails() {
               <div class="form-row form-row-2">
                 <input
                   type="text"
+                  onChange={handleChange}
                   name="phone"
                   class="phone"
                   id="phone"
@@ -85,7 +118,8 @@ export default function ContactDetails() {
             <div class="form-row">
               <input
                 type="text"
-                name="your_email"
+                name="email"
+                onChange={handleChange}
                 id="your_email"
                 class="input-text"
                 required
@@ -105,12 +139,13 @@ export default function ContactDetails() {
               </label>
             </div>
             <div class="form-row-last">
-              <input
-                type="submit"
-                name="register"
+            <button
                 class="register"
+                onClick={handleSubmit}
                 value="Register Badge"
-              />
+              >
+                Register Badge
+              </button>
             </div>
           </div>
     </div>
