@@ -1,32 +1,103 @@
-# Taskade - A Todo list application
+# Taskio App
 
-Managing your daily tasks regulary everyday with taskade platform
+Taskio is a task management application built with React, Node.js, Express, and MongoDB.
 
-Built it with
+## Table of Contents
 
-- Node.js
-- Express.js
-- MongoDB
-- React.js
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API](#api)
+- [Contributing](#contributing)
+- [License](#license)
 
-### Quick start
+## Features
 
-To start development locally to the following
+- Create, edit, and delete tasks
+- Mark tasks as completed
+- Responsive design for various screen sizes
+- Uses React Query for data fetching and caching
+- Modal for creating new tasks
 
-1. API
+## Prerequisites
 
-You will first have to install dependencies then start the server
+Before you begin, ensure you have met the following requirements:
 
-```bash
-cd api && npm run install # this is install required dependencies
-npm run dev # to start the development server
-```
+- Node.js installed on your local machine
+- MongoDB installed and running locally or accessible via a remote URI
+- npm or yarn package manager
 
-1. Frontend
+## Installation
 
-You will also install dependencies then start the server
+1. **Clone the repository**
 
-```bash
-cd api && npm run install # this is install required dependencies
-npm run dev # to start the development server
-```
+   ```bash
+   git clone https://github.com/your-username/taskio.git
+   cd taskio
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+   or
+
+   ```bash
+   yarn install
+   ```
+
+3. **Set up environment variables**
+
+   Create a `.env` file in the root directory with the following variables:
+
+   ```plaintext
+   PORT=4000
+   MONGO_URI=your_mongodb_connection_uri
+   ```
+
+4. **Start the server**
+
+   ```bash
+   npm start
+   ```
+
+   This will start the backend server using Express.
+
+5. **Start the React app**
+
+   Open a new terminal tab and navigate to the `client` directory:
+
+   ```bash
+   cd client
+   npm start
+   ```
+
+   This will start the React development server.
+
+## Usage
+
+Once the server and React app are running:
+
+- Open your browser and go to `http://localhost:3000` to use Taskio.
+- You can create new tasks, edit existing ones, mark them as completed, and delete tasks.
+
+## API
+
+Taskio uses the following API routes:
+
+- `GET /api/v1/tasks`: Get all tasks
+- `GET /api/v1/tasks/one/:id`: Get a single task by ID
+- `POST /api/v1/tasks/create`: Create a new task
+- `DELETE /api/v1/tasks/delete`: Delete a task
+- `PUT /api/v1/tasks/update`: Update a task
+
+## Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
