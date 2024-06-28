@@ -61,7 +61,9 @@ Before you begin, ensure you have met the following requirements:
 4. **Start the server**
 
    ```bash
-   npm start
+   cd api
+   npm i
+   npm run dev
    ```
 
    This will start the backend server using Express.
@@ -72,7 +74,8 @@ Before you begin, ensure you have met the following requirements:
 
    ```bash
    cd client
-   npm start
+   npm i
+   npm run dev
    ```
 
    This will start the React development server.
@@ -81,7 +84,7 @@ Before you begin, ensure you have met the following requirements:
 
 Once the server and React app are running:
 
-- Open your browser and go to `http://localhost:3000` to use Taskio.
+- Open your browser and go to `http://localhost:5175` to use Taskio.
 - You can create new tasks, edit existing ones, mark them as completed, and delete tasks.
 
 ## API
